@@ -9,6 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 # Import the SSD1306 module.
 import adafruit_ssd1306
+
 # font = ImageFont.load_default()
 font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 9)
 # Create the I2C interface.
@@ -39,6 +40,10 @@ dhtDevice = adafruit_dht.DHT11(board.D4)
 # Temp/ Humidity Readings
 humidity = 0
 temperature_c = 0
+tempReadings = []
+humidityReadings = []
+tempAverage = 0
+humidAverage = 0
 
 # Screen Variables
 page = 0
@@ -62,7 +67,24 @@ def draw_screen():
         display.show()
         text = 255 if text == 0 else 0
         bg = 0 if bg == 255 else 255
-        print(f"Text: {text} bg: {bg}")
+        # print(f"Text: {text} bg: {bg}")
+
+
+def append_readings():
+    global tempAverage
+    global humidAverage
+    if len(tempReadings) != 60:
+        tempReadings.append(temperature_c)
+    else:
+        del tempReadings[0]
+        tempReadings.append(temperature_c)
+    if len(humidityReadings) != 60:
+        humidityReadings.append(humidity)
+    else:
+        del tempReadings[0]
+        humidityReadings.append(humidity)
+    tempAverage = sum(tempReadings) / len(tempReadings)
+    humidAverage = sum(humidityReadings) / len(humidityReadings)
 
 
 while True:
@@ -76,10 +98,10 @@ while True:
             # Print the values to the serial port
             temperature_c = dhtDevice.temperature
             humidity = dhtDevice.humidity
+            append_readings()
             print(
-                "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Timer: {}s".format(
-                   current_time, temperature_c, temperature_c, humidity, timesRun
-                ))
+                "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {}c  Average Humidity {}%"
+                .format(current_time, temperature_c, temperature_c, humidity, tempAverage, humidAverage))
             # calls draw screen
             draw_screen()
             # draw.text((x, top + 5), "Temp    : " + str(temperature_c)+"C | Last Read :", font=font, fill=255)
