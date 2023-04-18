@@ -56,7 +56,7 @@ while True:
         time.sleep(2.0)
         continue
     except Exception as error:
-        dhtDevice.exit()
+        dht_error()
         raise error
 
     time.sleep(0.5)
