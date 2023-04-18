@@ -34,7 +34,7 @@ async def read_sensor():
     await temperature_c == dhtDevice.temperature
     await humidity == dhtDevice.humidity
 def take_readings(current_time):
-    await read_sensor()
+    read_sensor()
     
     print(
           "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
