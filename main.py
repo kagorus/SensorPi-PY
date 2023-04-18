@@ -42,7 +42,7 @@ while True:
             # Draw a black filled box to clear the image.
             # draw.rectangle((0, 0, width, height), outline=0, fill=0)
             # Print the values to the serial port
-            take_readings()
+            take_readings(current_time)
            # calls draw screen
             draw_screen()
             # draw.text((x, top + 5), "Temp    : " + str(temperature_c)+"C | Last Read :", font=font, fill=255)

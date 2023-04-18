@@ -30,7 +30,7 @@ def append_readings():
 def dht_error():
     dhtDevice.exit()
 
-def take_readings():
+def take_readings(current_time):
     temperature_c = dhtDevice.temperature
     humidity = dhtDevice.humidity
     append_readings()
