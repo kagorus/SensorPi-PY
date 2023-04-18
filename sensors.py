@@ -26,3 +26,6 @@ def append_readings():
         humidityReadings.append(humidity)
     tempAverage = sum(tempReadings) / len(tempReadings)
     humidAverage = sum(humidityReadings) / len(humidityReadings)
+
+def dht_error():
+    dhtDevice.exit()
