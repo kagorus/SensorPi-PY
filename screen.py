@@ -4,6 +4,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 import subprocess
 import busio
+import board
+from board import SCL, SDA
 # font = ImageFont.load_default()
 font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 9)
 # Create the I2C interface.
