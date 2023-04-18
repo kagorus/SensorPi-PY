@@ -16,6 +16,7 @@ def append_readings():
     global humidAverage
     if len(tempReadings) != 60:
         tempReadings.append(temperature_c)
+        print("append attempted")
     else:
         del tempReadings[0]
         tempReadings.append(temperature_c)

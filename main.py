@@ -15,12 +15,6 @@ timesRun = 0
 firstRun = 1
 triggerUpdate = 0
 
-
-tempAverage = float(0)
-humidAverage = float(0)
-
-
-
 def draw_screen():
     if page == 0:
         global text
