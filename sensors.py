@@ -48,9 +48,9 @@ def read_sensor():
 
 def take_readings(current_time):
     read_sensor()
-
+    append_readings()
     print(
         "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
         "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
                                                    tempAverage, humidAverage, len(tempReadings)))
-    append_readings()
+
