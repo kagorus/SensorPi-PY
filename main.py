@@ -16,6 +16,14 @@ timesRun = 0
 firstRun = 1
 triggerUpdate = 0
 
+# Temp/ Humidity Readings
+humidity = 0
+temperature_c = 0
+tempReadings = []
+humidityReadings = []
+tempAverage = float(0)
+humidAverage = float(0)
+
 
 
 
