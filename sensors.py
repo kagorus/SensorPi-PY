@@ -24,6 +24,7 @@ def append_readings():
     else:
         del tempReadings[0]
         humidityReadings.append(humidity)
+    print(f"temp average test: {tempAverage}")
     tempAverage = sum(tempReadings) / len(tempReadings)
     humidAverage = sum(humidityReadings) / len(humidityReadings)
 
@@ -33,7 +34,6 @@ def dht_error():
 def take_readings(current_time):
     temperature_c = dhtDevice.temperature
     humidity = dhtDevice.humidity
-    append_readings()
     print(
           "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
           "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
