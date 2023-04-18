@@ -1,5 +1,6 @@
 import adafruit_dht
 import board
+import time
 # Initial the dht device, with data pin connected to:
 dhtDevice = adafruit_dht.DHT11(board.D4)
 
@@ -29,10 +30,10 @@ def append_readings():
 def dht_error():
     dhtDevice.exit()
 
-async def take_readings(current_time):
-    await asyncio.sleep(5)
+def take_readings(current_time):
     temperature_c = dhtDevice.temperature
     humidity = dhtDevice.humidity
+    time.sleep(1)
     print(
           "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
           "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
