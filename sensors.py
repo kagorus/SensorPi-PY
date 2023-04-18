@@ -30,10 +30,12 @@ def append_readings():
 def dht_error():
     dhtDevice.exit()
 
+async def read_sensor():
+    await temperature_c == dhtDevice.temperature
+    await humidity == dhtDevice.humidity
 def take_readings(current_time):
-    temperature_c = dhtDevice.temperature
-    humidity = dhtDevice.humidity
-    time.sleep(1)
+    await read_sensor()
+    
     print(
           "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
           "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
