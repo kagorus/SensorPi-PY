@@ -1,6 +1,4 @@
 import adafruit_dht
-import board
-from board import SCL, SDA
 # Initial the dht device, with data pin connected to:
 dhtDevice = adafruit_dht.DHT11(board.D4)
 
