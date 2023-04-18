@@ -6,13 +6,6 @@ from datetime import datetime
 from screen import *
 from sensors import *
 
-# Temp/ Humidity Readings
-humidity = 0
-temperature_c = 0
-tempReadings = []
-humidityReadings = []
-tempAverage = float(0)
-humidAverage = float(0)
 
 
 
@@ -27,6 +20,18 @@ triggerUpdate = 0
 
 
 
+def draw_screen():
+    if page == 0:
+        global text
+        global bg
+        draw.rectangle((0, 0, width, height), outline=0, fill=bg)
+        draw.text((x, top + 5), "Temp    : " + str(temperature_c) + "C | Last Read :", font=font, fill=text)
+        draw.text((x, top + 20), "Humidity: " + str(humidity) + "%  |  " + current_time, font=font, fill=text)
+        display.image(image)
+        display.show()
+        text = 255 if text == 0 else 0
+        bg = 0 if bg == 255 else 255
+        # print(f"Text: {text} bg: {bg}")
 
 while True:
     try:
