@@ -6,6 +6,13 @@ from datetime import datetime
 from screen import *
 from sensors import *
 
+# Temp/ Humidity Readings
+humidity = 0
+temperature_c = 0
+tempReadings = []
+humidityReadings = []
+tempAverage = float(0)
+humidAverage = float(0)
 
 
 
