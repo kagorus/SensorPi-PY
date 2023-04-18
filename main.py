@@ -3,7 +3,10 @@ import screen
 
 import time
 from datetime import datetime
-
+from screen import draw_screen
+from sensors import append_readings
+from sensors import dht_error
+from sensors import take_readings
 
 
 
