@@ -23,7 +23,6 @@ def append_readings():
     else:
         del tempReadings[0]
         humidityReadings.append(humidity)
-    print(f"temp average test: {tempAverage}")
     tempAverage = sum(tempReadings) / len(tempReadings)
     humidAverage = sum(humidityReadings) / len(humidityReadings)
 
