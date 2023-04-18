@@ -3,11 +3,10 @@ import screen
 
 import time
 from datetime import datetime
-import board
-from board import SCL, SDA
+
 import subprocess
 import busio
-from PIL import Image, ImageDraw, ImageFont
+
 
 
 
