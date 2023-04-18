@@ -4,8 +4,6 @@ import screen
 import time
 from datetime import datetime
 
-import subprocess
-import busio
 
 
 
