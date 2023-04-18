@@ -16,7 +16,8 @@ firstRun = 1
 triggerUpdate = 0
 
 
-
+tempAverage = float(0)
+humidAverage = float(0)
 
 
 
