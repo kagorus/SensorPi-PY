@@ -36,4 +36,5 @@ def take_readings(current_time):
           "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
           "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
                 tempAverage, humidAverage, len(tempReadings)))
+    append_readings()
  
