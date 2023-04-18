@@ -30,8 +30,8 @@ def dht_error():
     dhtDevice.exit()
 
 def take_readings(current_time):
-    temperature_c = dhtDevice.temperature
-    humidity = dhtDevice.humidity
+    temperature_c = dhtDevice.temperature.wait()
+    humidity = dhtDevice.humidity.wait()
     print(
           "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
           "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
