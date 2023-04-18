@@ -28,9 +28,7 @@ while True:
             # Draw a black filled box to clear the image.
             # draw.rectangle((0, 0, width, height), outline=0, fill=0)
             # Print the values to the serial port
-            temperature_c = dhtDevice.temperature
-            humidity = dhtDevice.humidity
-            append_readings()
+            
             print(
                 "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
                 "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,

@@ -29,3 +29,8 @@ def append_readings():
 
 def dht_error():
     dhtDevice.exit()
+
+def take_readings():
+    temperature_c = dhtDevice.temperature
+    humidity = dhtDevice.humidity
+    append_readings()
