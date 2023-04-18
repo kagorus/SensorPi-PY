@@ -34,3 +34,8 @@ def take_readings():
     temperature_c = dhtDevice.temperature
     humidity = dhtDevice.humidity
     append_readings()
+    print(
+          "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
+          "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
+                tempAverage, humidAverage, len(tempReadings)))
+ 

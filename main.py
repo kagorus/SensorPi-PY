@@ -29,11 +29,7 @@ while True:
             # draw.rectangle((0, 0, width, height), outline=0, fill=0)
             # Print the values to the serial port
             
-            print(
-                "Time: {} Raw: {}  Temp:  {:.1f} C    Humidity: {}%  Average Temp (hr): {:.1f}c  Average Humidity "
-                "{:.1f}%  Temp Reading Count :  {}".format(current_time, temperature_c, temperature_c, humidity,
-                                                           tempAverage, humidAverage, len(tempReadings)))
-            # calls draw screen
+           # calls draw screen
             draw_screen()
             # draw.text((x, top + 5), "Temp    : " + str(temperature_c)+"C | Last Read :", font=font, fill=255)
             # draw.text((x, top + 20), "Humidity: " + str(humidity)+"%  |  "+ current_time, font=font, fill=255)
