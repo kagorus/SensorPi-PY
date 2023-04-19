@@ -1,6 +1,5 @@
 import adafruit_dht
 import board
-import time
 
 # Initial the dht device, with data pin connected to:
 dhtDevice = adafruit_dht.DHT11(board.D4)
@@ -22,7 +21,6 @@ def append_readings():
 
     if len(tempReadings) != 60:
         tempReadings.append(temperature_c)
-        print(f"append attempted {len(tempReadings)}")
     else:
         del tempReadings[0]
         tempReadings.append(temperature_c)
