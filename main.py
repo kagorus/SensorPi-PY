@@ -14,10 +14,10 @@ triggerUpdate = 0
 
 def draw_screen():
     if page == 0:
+        from sensors import temperature_c
+        from sensors import humidity
         global text
         global bg
-        global temperature_c
-        global humidity
         draw.rectangle((0, 0, width, height), outline=0, fill=bg)
         draw.text((x, top + 5), "Temp    : " + str(temperature_c) + "C | Last Read :", font=font, fill=text)
         draw.text((x, top + 20), "Humidity: " + str(humidity) + "%  |  " + current_time, font=font, fill=text)
